@@ -1,0 +1,27 @@
+{
+  "name": "flanger-bot",
+  "version": "1.0.0",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [
+    "Music Bot for Discord",
+    "Discord Bot",
+    "Discord Media Player"
+  ],
+  "author": "Juan Vanegas - https://github.com/jdvanegasm",
+  "license": "ISC",
+  "description": "FlangerBot is a music bot for Discord developed in Node.js, delivering high-quality audio playback and a smooth user experience. Enjoy seamless music streaming, easy commands, and a reliable performance with Flanger.",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "browser-sync": "^3.0.2",
+    "nodemon": "^3.1.4"
+  }
+}
