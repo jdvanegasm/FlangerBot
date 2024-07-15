@@ -76,3 +76,4 @@ client.on(Events.InteractionCreate, async (interaction) => {
 
 // Log in to Discord with the client's token
 client.login(process.env.TOKEN);
+//commit example
