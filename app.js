@@ -7,7 +7,11 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const client = new Client({
-  intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages],
+  intents: [
+    GatewayIntentBits.Guilds,
+    GatewayIntentBits.GuildMessages,
+    GatewayIntentBits.GuildVoiceStates,
+  ],
 });
 
 client.commands = new Collection();
@@ -19,7 +23,7 @@ async function loadCommands(directory) {
   for (const file of files) {
     const filePath = path.join(directory, file.name);
     if (file.isDirectory()) {
-      await loadCommands(filePath); // Recursively load commands
+      await loadCommands(filePath);
     } else if (file.isFile() && file.name.endsWith(".js")) {
       try {
         const command = await import(filePath);
@@ -40,7 +44,7 @@ async function loadCommands(directory) {
 
 client.once(Events.ClientReady, async () => {
   console.log(`Logged in as ${client.user.tag}`);
-  await loadCommands(commandsPath); // Load commands before the bot is ready to take interactions
+  await loadCommands(commandsPath);
 });
 
 client.on(Events.InteractionCreate, async (interaction) => {
