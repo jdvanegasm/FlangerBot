@@ -10,7 +10,7 @@ const rawData = fs.readFileSync(configPath);
 const { clientId, guildId, token } = JSON.parse(rawData);
 
 const commands = [];
-const commandsPath = path.join(__dirname, "commands");
+const commandsPath = path.join(__dirname, "commands/utility/functionalities");
 
 // Función recursiva para leer todos los archivos .js en subdirectorios
 function readCommandFiles(directory) {

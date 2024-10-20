@@ -16,7 +16,7 @@ const client = new Client({
 
 client.commands = new Collection();
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const commandsPath = path.join(__dirname, "commands");
+const commandsPath = path.join(__dirname, "../commands");
 
 async function loadCommands(directory) {
   const files = fs.readdirSync(directory, { withFileTypes: true });
